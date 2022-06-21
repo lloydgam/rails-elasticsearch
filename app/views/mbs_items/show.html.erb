@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @mbs_item.reference %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @mbs_item.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @mbs_item.end_date %>
+</p>
+
+<p>
+  <strong>Is latest:</strong>
+  <%= @mbs_item.is_latest %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mbs_item.description %>
+</p>
+
+<%= link_to 'Edit', edit_mbs_item_path(@mbs_item) %> |
+<%= link_to 'Back', mbs_items_path %>
