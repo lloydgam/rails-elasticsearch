@@ -4,8 +4,8 @@ class MbsItem < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   
-  index_name Rails.application.class.parent_name.underscore
-  document_type self.name.downcase
+  index_name "mbs"
+  document_type "mbs_items"
 
   settings index: {number_of_shards: 1} do
     mapping dynamic: 'false' do
@@ -15,7 +15,7 @@ class MbsItem < ApplicationRecord
   end
 
   def as_indexed_json(options = nil)
-    self.as_json( only: [:reference, :description], methods: :method_name)
+    self.as_json( only: [:reference, :description])
   end
 
   def self.search(query)
