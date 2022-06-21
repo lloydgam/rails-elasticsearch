@@ -3,11 +3,11 @@ class MbsItemsController < ApplicationController
 
   # GET /mbs_items or /mbs_items.json
   def index
-    # if params[:query].present?
-    #   @mbs_items = MbsItem.search(params[:query]).records.to_a
-    # else
+    if params[:query].present?
+      @mbs_items = MbsItem.search(params[:query]).records
+    else
       @mbs_items = MbsItem.all
-    #end
+    end
   end
 
   # GET /mbs_items/1 or /mbs_items/1.json
